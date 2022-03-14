@@ -1,5 +1,5 @@
 import logging
-from typing import Mapping, Any
+from typing import Any, Mapping
 
 from plugintoolbox import VictimHost
 
