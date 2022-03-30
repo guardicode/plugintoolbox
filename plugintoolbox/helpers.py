@@ -1,7 +1,7 @@
 import logging
 import random
 import string
-from pathlib import Path, PurePosixPath, PureWindowsPath, PurePath
+from pathlib import PurePath, PurePosixPath, PureWindowsPath
 from typing import Any, Mapping
 
 from plugintoolbox import VictimHost
