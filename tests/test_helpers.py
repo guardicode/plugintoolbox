@@ -13,7 +13,7 @@ from plugintoolbox.helpers import (
 
 def _get_host(os):
     host = Mock()
-    host.os = os
+    host.operating_system = os
     return host
 
 
