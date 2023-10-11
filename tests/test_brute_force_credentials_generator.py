@@ -1,9 +1,7 @@
 from typing import Callable, Iterable, List, Set
 
 import pytest
-from tests.propagation_credentials import IDENTITIES, SECRETS
-
-from common.credentials import (
+from monkeytypes import (
     Credentials,
     EmailAddress,
     Identity,
@@ -13,6 +11,8 @@ from common.credentials import (
     Secret,
     Username,
 )
+from tests.propagation_credentials import IDENTITIES, SECRETS
+
 from plugintoolbox import (
     generate_brute_force_credentials,
     identity_type_filter,
