@@ -1,7 +1,7 @@
 from typing import Sequence, Set
 
 from agentpluginapi import TargetHost
-from monkeytypes import NetworkPort, NetworkService
+from monkeytypes import NetworkPort, NetworkProtocol, NetworkService
 
 # NOTE: Don't migrate these functions to a user-facing interface
 #       without properly thinking about it. Are these functions stable enough?
@@ -29,6 +29,13 @@ def filter_out_closed_ports(host: TargetHost, ports: Sequence[NetworkPort]) -> S
     return {port for port in ports if port not in host.ports_status.tcp_ports.closed}
 
 
-def get_open_http_ports(host: TargetHost) -> Sequence[NetworkPort]:
-    tcp_ports = host.ports_status.tcp_ports
-    return [port for port in tcp_ports.open if tcp_ports[port].service == NetworkService.HTTP]
+def get_known_service_ports(
+    host: TargetHost, protocol: NetworkProtocol, service: NetworkService
+) -> Sequence[NetworkPort]:
+    ports = (
+        host.ports_status.tcp_ports
+        if protocol == NetworkProtocol.TCP
+        else host.ports_status.udp_ports
+    )
+
+    return [port for port in ports.open if ports[port].service == service]

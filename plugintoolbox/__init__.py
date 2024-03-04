@@ -19,5 +19,5 @@ from .utils import (
     all_tcp_ports_are_closed,
     all_udp_ports_are_closed,
     filter_out_closed_ports,
-    get_open_http_ports,
+    get_known_service_ports,
 )
