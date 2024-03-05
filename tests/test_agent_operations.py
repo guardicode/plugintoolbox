@@ -6,7 +6,7 @@ import pytest
 from agentpluginapi import TargetHost
 from monkeytypes import OperatingSystem
 
-from plugintoolbox.helpers import (
+from plugintoolbox.agent_operations import (
     AGENT_BINARY_PATH_LINUX,
     AGENT_BINARY_PATH_WIN64,
     DROPPER_SCRIPT_PATH_LINUX,

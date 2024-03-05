@@ -15,17 +15,21 @@ from .i_remote_access_client import (
 )
 from .i_remote_access_client_factory import IRemoteAccessClientFactory
 from .script_dropper import build_bash_dropper
-from .utils import (
+from .network_utils import (
     all_tcp_ports_are_closed,
     all_udp_ports_are_closed,
     filter_out_closed_ports,
     get_known_service_ports,
 )
-from .file_utils import (
+from .file_filters import (
     filter_files,
     file_extension_filter,
     is_not_symlink_filter,
     is_not_shortcut_filter,
 )
-from .helpers import get_agent_dst_path, get_random_file_suffix, get_dropper_script_dst_path
+from .agent_operations import (
+    get_agent_dst_path,
+    get_random_file_suffix,
+    get_dropper_script_dst_path,
+)
 from .web_tools import build_urls
