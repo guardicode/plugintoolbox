@@ -6,8 +6,6 @@ from monkeytoolbox import apply_filters
 
 logger = logging.getLogger(__name__)
 
-MOVEFILE_DELAY_UNTIL_REBOOT = 4
-
 
 def filter_files(
     files: Iterable[Path], file_filters: Iterable[Callable[[Path], bool]]

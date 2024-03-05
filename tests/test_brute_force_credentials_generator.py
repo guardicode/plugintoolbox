@@ -11,13 +11,9 @@ from monkeytypes import (
     Secret,
     Username,
 )
-from tests.propagation_credentials import IDENTITIES, SECRETS
 
-from plugintoolbox import (
-    generate_brute_force_credentials,
-    identity_type_filter,
-    secret_type_filter,
-)
+from plugintoolbox import generate_brute_force_credentials, identity_type_filter, secret_type_filter
+from tests.propagation_credentials import IDENTITIES, SECRETS
 
 
 def generate_and_compare_credentials(
