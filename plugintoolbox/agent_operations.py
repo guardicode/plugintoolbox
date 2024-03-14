@@ -1,12 +1,9 @@
-import logging
 import string
 from pathlib import PurePath, PurePosixPath, PureWindowsPath
 
 from agentpluginapi import TargetHost
 from monkeytoolbox import insecure_generate_random_string
 from monkeytypes import OperatingSystem
-
-logger = logging.getLogger(__name__)
 
 RAND_SUFFIX_LEN = 8
 
