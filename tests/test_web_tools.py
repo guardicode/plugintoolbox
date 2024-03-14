@@ -23,4 +23,4 @@ def test_build_urls__extensions(extension):
 
 def test_build_urls__raise_key_error():
     with pytest.raises(IndexError):
-        build_urls("1.1.1.1", [("8080",)])
+        build_urls("1.1.1.1", [("8080",)])  # type: ignore [list-item]

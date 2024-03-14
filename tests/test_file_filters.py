@@ -4,8 +4,8 @@ from unittest.mock import MagicMock
 import pytest
 
 from plugintoolbox import (
-    filter_files,
     file_extension_filter,
+    filter_files,
     is_not_shortcut_filter,
     is_not_symlink_filter,
 )
