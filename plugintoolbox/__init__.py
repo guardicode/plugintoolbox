@@ -15,12 +15,6 @@ from .i_remote_access_client import (
 )
 from .i_remote_access_client_factory import IRemoteAccessClientFactory
 from .script_dropper import build_bash_dropper
-from .network_utils import (
-    all_tcp_ports_are_closed,
-    all_udp_ports_are_closed,
-    filter_out_closed_ports,
-    get_known_service_ports,
-)
 from .file_filters import (
     filter_files,
     file_extension_filter,
