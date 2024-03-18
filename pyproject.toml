@@ -58,9 +58,9 @@ include = ["CHANGELOG.md", "README.md"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-monkeyevents = "^0.4.0"
+monkeyevents = ">=0.4.0"
 requests = "^2.31.0"
-monkey-agentpluginapi = "^0.4.0"
+monkey-agentpluginapi = ">=0.4.0"
 
 [tool.poetry.dev-dependencies]
 black = "23.9.1"
