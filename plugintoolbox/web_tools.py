@@ -1,30 +1,37 @@
+from ipaddress import IPv4Address
 from posixpath import join
 from typing import List, Optional, Tuple
 
+from monkeytypes import NetworkPort
+
 
 def build_urls(
-    ip: str, ports: List[Tuple[str, bool]], extensions: Optional[List[str]] = None
+    ip: IPv4Address,
+    ports: List[Tuple[NetworkPort, bool]],
+    path_components: Optional[List[str]] = None,
 ) -> List[str]:
     """
     Build all possibly-vulnerable URLs on a specific host, based on the relevant ports and
     extensions.
+
     :param ip: IP address of the victim
-    :param ports: Array of ports. One port is described as size 2 array: [port.no(int),
-    isHTTPS?(bool)]
-    Eg. ports: [[80, False], [443, True]]
-    :param extensions: What subdirectories to scan. www.domain.com[/extension]
+    :param ports: List of port where a port is consisted of: [NetworkPort, isHTTPS?(bool)]
+        Eg. ports: [[80, False], [443, True]]
+    :param path_components: List of strings representing path components of a URL.
+        Eg. www.domain.com[/extension]
     :return: Array of url's to try and attack
     """
-    url_list = []
-    if extensions:
-        extensions = [(e[1:] if "/" == e[0] else e) for e in extensions]
+    if path_components is None:
+        path_components = [""]
     else:
-        extensions = [""]
-    for port in ports:
-        for extension in extensions:
-            if port[1]:
-                protocol = "https"
-            else:
-                protocol = "http"
-            url_list.append(join(("%s://%s:%s" % (protocol, ip, port[0])), extension))
+        # Remove leading slashes from extensions if present
+        path_components = [e.lstrip("/") for e in path_components]
+
+    url_list = []
+    for port, is_https in ports:
+        protocol = "https" if is_https else "http"
+        url = f"{protocol}://{ip}:{port}"
+        for component in path_components:
+            url_list.append(join(url, component))
+
     return url_list

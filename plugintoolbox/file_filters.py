@@ -1,14 +1,11 @@
-import logging
 from pathlib import Path
 from typing import Callable, Iterable, Set
 
 from monkeytoolbox import apply_filters
 
-logger = logging.getLogger(__name__)
-
 
 def filter_files(
-    files: Iterable[Path], file_filters: Iterable[Callable[[Path], bool]]
+    file_filters: Iterable[Callable[[Path], bool]], files: Iterable[Path]
 ) -> Iterable[Path]:
     return apply_filters(file_filters, files)
 

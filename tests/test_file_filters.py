@@ -23,7 +23,7 @@ def mock_files():
 
 def test_filter_files(mock_files):
     file_filters = [file_extension_filter({".txt"}), is_not_symlink_filter]
-    filtered_files = list(filter_files(mock_files, file_filters))
+    filtered_files = list(filter_files(file_filters, mock_files))
 
     assert len(filtered_files) == 1
     assert filtered_files[0].suffix == ".txt"
