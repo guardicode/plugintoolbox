@@ -43,7 +43,7 @@ paths = ["plugintoolbox", "vulture_allowlist.py"]
 
 [tool.poetry]
 name = "monkey-plugintoolbox"
-version = "v0.1.0"
+version = "v0.2.0"
 description = "Miscellaneous convenience utilities for Monkey Plugins code"
 authors = ["Ilija Lazoroski <ilija.lazoroski@gmail.com>"]
 license = "GPLv3"
@@ -58,9 +58,9 @@ include = ["CHANGELOG.md", "README.md"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-monkeyevents = "^0.4.0"
+monkeyevents = ">=0.4.0"
 requests = "^2.31.0"
-monkey-agentpluginapi = "^0.4.0"
+monkey-agentpluginapi = ">=0.4.0"
 
 [tool.poetry.dev-dependencies]
 black = "23.9.1"
