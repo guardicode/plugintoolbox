@@ -42,7 +42,7 @@ exclude=[]
 paths = ["plugintoolbox", "vulture_allowlist.py"]
 
 [tool.poetry]
-name = "plugintoolbox"
+name = "monkey-plugintoolbox"
 version = "v0.1.0"
 description = "Miscellaneous convenience utilities for Monkey Plugins code"
 authors = ["Ilija Lazoroski <ilija.lazoroski@gmail.com>"]
@@ -53,6 +53,7 @@ classifiers=[
 ]
 repository = "https://github.com/guardicode/plugintoolbox"
 readme = "README.md"
+packages = [{include = "plugintoolbox"}]
 include = ["CHANGELOG.md", "README.md"]
 
 [tool.poetry.dependencies]
