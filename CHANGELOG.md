@@ -10,6 +10,7 @@ the [PEP 440 version scheme](https://peps.python.org/pep-0440/#version-scheme).
 ## [0.3.0] - 2024-03-19
 ### Changed
 - Agent-provided dependencies to dev dependencies.
+- Dependency "requests" to dev dependency.
 
 
 ## [0.2.0] - 2024-03-18
